@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "power-market-quantitative-analysis"
+version = "0.1.0"
+description = "European electricity price forecasting, hypothetical spread backtesting, and risk analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3", "pandas>=2.2,<3", "scikit-learn>=1.5,<2",
+  "xgboost>=2.1,<4", "statsmodels>=0.14,<0.15", "streamlit>=1.40,<2",
+  "plotly>=5.24,<7", "requests>=2.32,<3"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+power-market = "power_market.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
