@@ -6,11 +6,11 @@ Input: [European Wholesale Electricity Prices on Kaggle](https://www.kaggle.com/
 
 ## Run locally
 
-Python 3.11+ (validated with 3.12), with no database server, API key, or GPU required:
+With Conda installed, run these commands from the repository directory. The environment uses Python 3.12; no database server, API key, or GPU is required:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+conda create --name power-market python=3.12 pip --yes
+conda activate power-market
 python -m pip install -r requirements.lock
 python -m pip install --no-deps -e .
 python scripts/download_dataset.py
